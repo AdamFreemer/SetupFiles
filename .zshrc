@@ -53,4 +53,4 @@ alias dev="cd /Volumes/Internal2TB/Dropbox/Dev"
 # SSH Logins
 alias wiw="ssh svc_wiw@app-br-17e.idk.cable.comcast.com"
 alias ivsms="ssh svc_sos@162.150.11.206 -i ~/.ssh/opsen-tools.pem"
-alias ovh="ssh root@162.243.120.210"
+alias digitalocean="ssh root@104.131.43.54 -i ~/.ssh/dig_ocean"
