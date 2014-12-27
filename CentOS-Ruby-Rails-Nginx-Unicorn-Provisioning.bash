@@ -8,9 +8,9 @@ passwd -d svc_app
 # system
 yum -y update
 yum install -y bash curl git patch
-yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel mod_dav_svn subversion
-
-yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel mod_dav_svn subversion
+yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel
+## options
+yum install -y mod_dav_svn subversion
 
 yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
 yum install -y mysql-server mysql mysql-devel qt-devel qt-config 
@@ -19,7 +19,7 @@ yum install -y nginx
 
 # application environment
 mkdir /opt/app
-chown svc_oiv /opt/app
+chown user_name /opt/app
 
 
 cat >/etc/nginx/nginx.conf << EOF
@@ -35,7 +35,6 @@ error_log  /var/log/nginx/error.log;
 #error_log  /var/log/nginx/error.log  info;
 
 pid        /var/run/nginx.pid;
-
 
 events {
     worker_connections  1024;
@@ -69,7 +68,6 @@ http {
         server_name  localhost;
 
         #charset koi8-r;
-
         #access_log  /var/log/nginx/host.access.log  main;
 
         location / {
@@ -115,8 +113,7 @@ http {
         #}
     }
 
-
-    # another virtual host using mix of IP-, name-, and port-based configuration
+    #Another virtual host using mix of IP-, name-, and port-based configuration
     #
     #server {
     #    listen       8000;
@@ -131,7 +128,6 @@ http {
 
 
     # HTTPS server
-    #
     #server {
     #    listen       443;
     #    server_name  localhost;
@@ -153,7 +149,7 @@ http {
     #}
 
 }
-EOF
+
 service nginx restart
 
 # redis
@@ -280,7 +276,7 @@ service redis-server start 2>&1 >/dev/null &
 
 # -- user level
 # rvm
-sudo -u svc_oiv -H bash -c "
+sudo -u user_name -H bash -c "
 source ~/.bash_profile
 mkdir ~/installations && cd ~/installations
 curl -L 'https://get.rvm.io' | bash -s stable
@@ -295,8 +291,7 @@ chmod 0700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
 
-echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDKM4Ugdb9OCmIB+0qKtftldz7CdwqnTKEAl00T3ctnZVpeI5lfdVzWz53srzxDLGuHdThlfDu4JbqyZESSCjcEVvvXCh2FfiBF9DV9sibnk+BcgxDfgsz6VuC6kAJ3Yqsq3Qh3NKE0nPL1Y5OxwqKZcFAwDf2HGSlqCKxXlZn1hw== nova@osctrl-ch2-b01' > ~/.ssh/authorized_keys
-"
+echo 'ssh-rsa key"
 
 echo << EOF
 POST INSTALL NOTES:
