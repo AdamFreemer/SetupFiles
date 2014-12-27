@@ -1,6 +1,5 @@
 
 
-
 ###### -- system level - execute as sudo
 ## user setup
 useradd svc_app
