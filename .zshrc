@@ -54,3 +54,15 @@ alias dev="cd /Volumes/Internal2TB/Dropbox/Dev"
 alias wiw="ssh svc_wiw@app-br-17e.idk.cable.comcast.com"
 alias ivsms="ssh svc_sos@162.150.11.206 -i ~/.ssh/opsen-tools.pem"
 alias digitalocean="ssh root@104.131.43.54 -i ~/.ssh/dig_ocean"
+
+# General Shortcuts
+alias lsa="ls -lap"
+alias rs="bundle exec rails server"
+alias rc="bundle exec rails console"
+
+alias comcast="cd ~/Dropbox/Dev/Comcast"
+alias issuesviasms="cd ~/Dropbox/Dev/Comcast/whowhatwhenws"
+alias whatiswhat="cd ~/Dropbox/Dev/Comcast/whatiswhatws"
+alias vipdashboard="cd ~/Dropbox/Dev/Comcast/vip-dashboard"
+alias trworkbench="cd ~/Dropbox/Dev/Comcast/tr_workbench"
+alias miwc="cd ~/Dropbox/cOding/MakeItWithRuby"
