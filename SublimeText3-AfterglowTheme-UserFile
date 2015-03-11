@@ -1,0 +1,18 @@
+{
+	"color_inactive_tabs": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"command": "auto_save",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"keys":
+	[
+		"ctrl+shift+s"
+	],
+	"save_on_focus_lost": true,
+	"sidebar_size_10": true,
+	"tabs_small": true,
+	"theme": "Afterglow-orange.sublime-theme"
+}
